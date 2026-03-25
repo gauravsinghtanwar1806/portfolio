@@ -49,8 +49,8 @@ export const links = () => [
 export const loader = async ({ request, context }) => {
   const { url } = request;
   const { pathname } = new URL(url);
-  const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : url;
-  const canonicalUrl = `${config.url}${pathnameSliced}`;
+  const siteUrl = config.url.endsWith('/') ? config.url.slice(0, -1) : config.url;
+  const canonicalUrl = `${siteUrl}${pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname}`;
 
   const { getSession, commitSession } = createCookieSessionStorage({
     cookie: {
