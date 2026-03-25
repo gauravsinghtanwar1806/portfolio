@@ -9,3 +9,7 @@ node_modules
 
 public/draco
 storybook-static
+
+.vercel
+build_log.txt
+vercel_build_log.txt
