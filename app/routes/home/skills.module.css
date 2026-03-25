@@ -1,0 +1,39 @@
+.logoCloud {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin-top: var(--space2XL);
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: var(--space2XL);
+  animation: scroll 20s linear infinite;
+  padding-right: var(--space2XL);
+}
+
+.marquee img {
+  width: var(--space3XL);
+  height: var(--space3XL);
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter var(--durationM) ease, transform var(--durationM) ease;
+}
+
+.marquee img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
