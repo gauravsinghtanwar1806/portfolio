@@ -37,3 +37,98 @@
     transform: translateX(-50%);
   }
 }
+
+/* ── Soft Skills Section ── */
+
+.softSkillsSection {
+  margin-top: var(--spaceXL);
+  width: 100%;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease 0.6s;
+}
+
+.softSkillsSection[data-visible='true'] {
+  opacity: 1;
+}
+
+.softSkillsHeading {
+  font-size: var(--fontSizeBodyM);
+  font-weight: var(--fontWeightBold);
+  color: var(--textTitle);
+  margin: 0 0 var(--spaceM) 0;
+  padding-bottom: var(--spaceS);
+  border-bottom: 2px solid color-mix(in lab, var(--primary) 40%, transparent);
+  display: inline-block;
+  opacity: 0;
+  transition: opacity var(--durationL) ease 0.5s;
+}
+
+.softSkillsHeading[data-visible='true'] {
+  opacity: 1;
+}
+
+.softSkillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceS);
+  width: 100%;
+}
+
+.softSkillBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in lab, var(--soft-glow, #888) 8%, transparent),
+    color-mix(in lab, var(--soft-glow, #888) 3%, transparent)
+  );
+  border: 1px solid color-mix(in lab, var(--soft-glow, #888) 22%, transparent);
+  border-radius: 24px;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  transition:
+    opacity var(--durationM) ease,
+    transform var(--durationM) ease,
+    background var(--durationS) ease,
+    border-color var(--durationS) ease,
+    box-shadow var(--durationS) ease;
+  cursor: default;
+}
+
+.softSkillBadge[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.softSkillBadge:hover {
+  background: linear-gradient(
+    135deg,
+    color-mix(in lab, var(--soft-glow, #888) 18%, transparent),
+    color-mix(in lab, var(--soft-glow, #888) 8%, transparent)
+  );
+  border-color: color-mix(in lab, var(--soft-glow, #888) 40%, transparent);
+  box-shadow: 0 4px 20px -4px color-mix(in lab, var(--soft-glow, #888) 25%, transparent);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.softSkillEmoji {
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: color-mix(in lab, var(--soft-glow, #888) 12%, transparent);
+  flex-shrink: 0;
+}
+
+.softSkillText {
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  color: var(--textTitle);
+  white-space: nowrap;
+}
