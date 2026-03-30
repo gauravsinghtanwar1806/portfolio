@@ -72,6 +72,17 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 >
                   Download CV
                 </Button>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon="arrow-right"
+                >
+                  View CV
+                </Button>
               </div>
             </div>
             <div className={styles.column}>
